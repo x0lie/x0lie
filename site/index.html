@@ -32,5 +32,16 @@ padding: 0 20px; }
   <p>
     Kubernetes · Docker · Cilium · GitOps · Golang · Terraform · AWS
   </p>
+  <script>
+    fetch('https://analytics.x0lie.com/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        path: window.location.pathname,
+        referrer: document.referrer
+      }),
+      keepalive: true
+    });
+  </script>
 </body>
 </html>
