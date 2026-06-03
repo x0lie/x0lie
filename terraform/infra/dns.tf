@@ -4,6 +4,12 @@ resource "cloudflare_zone_setting" "ssl" {
   value      = "flexible"
 }
 
+resource "cloudflare_zone_setting" "always_use_https" {
+  zone_id = var.cloudflare_zone_id
+  setting_id = "always_use_https"
+  value   = "on"
+}
+
 resource "cloudflare_dns_record" "apex" {
   zone_id = var.cloudflare_zone_id
   name    = "x0lie.com"
